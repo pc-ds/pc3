@@ -11,4 +11,4 @@ function soma(x, y) {
   }
   
   // módulos são utilizados para disponibilizar bibliotecas e funções e classes
-  module.exports = { soma, subtrair }
+module.exports = {soma, subtrair}
