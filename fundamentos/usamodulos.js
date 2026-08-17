@@ -2,7 +2,7 @@
 // Arquivo criado na raiz do projeto
 
 // importação dos módulos disponíveis
-const oper = require('/home/pc-ds/pc3/fundamentos/definemodule.js');
+const oper = require('./definemodule.js');
 
 var x = 3, y = 5;
 

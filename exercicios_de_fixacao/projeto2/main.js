@@ -1,4 +1,4 @@
-import {Conversor} from "/home/pc-ds/pc3/exercicios_de_fixacao/projeto2/conversor.js"
+import {Conversor} from "./conversor.js"
 
 const conversor = new Conversor();
 

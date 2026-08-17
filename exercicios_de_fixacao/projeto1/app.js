@@ -1,4 +1,4 @@
-const convert = require("/home/pc-ds/pc3/exercicios_de_fixacao/projeto1/conversores.js")
+const convert = require("./conversores.js")
 
 console.log(convert.celsiusParaFahrenheit(30));
 console.log(convert.horasParaMinutos(2));
