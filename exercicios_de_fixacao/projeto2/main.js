@@ -1,4 +1,4 @@
-import {Conversor} from "./conversor.js"
+const Conversor = require("./conversor.js");
 
 const conversor = new Conversor();
 

@@ -9,4 +9,4 @@ class Conversor{
         return minutos/60;
     }
 }
-export {Conversor};
+module.exports = Conversor;
