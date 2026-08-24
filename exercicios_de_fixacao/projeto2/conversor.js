@@ -8,6 +8,5 @@ class Conversor{
     minutosParaHoras(minutos){
         return minutos/60;
     }
-
 }
 export {Conversor};
