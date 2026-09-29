@@ -1,7 +1,3 @@
-const Animal = require("./Animal.js");
-const Prontuario = require("./Prontuario.js");
-const Veterinario = require("./Veterinario.js");
-
 class Cliente{
     
     #nome;
@@ -44,6 +40,7 @@ class Cliente{
     }
     
     addAnimal(bicho){
+        const Animal = require("./Animal.js");
         if(bicho instanceof Animal){
             this.#animais.push(bicho);
             bicho.setCliente(this);
@@ -59,8 +56,10 @@ class Cliente{
     }
     
     listarAnimais(){
-        for(let animal in this.#animais){
-            console.log(animal.getNome());
+        console.log(`Cliente: ${this.#nome}:\n`);
+        console.log("Animais: \n");
+        for(const animal of this.#animais){
+            console.log(`\u2022 ${animal.getNome()}`);
         }
     }
 }

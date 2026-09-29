@@ -1,7 +1,3 @@
-const Cliente = require("./Cliente.js");
-const Prontuario = require("./Prontuario.js");
-const Veterinario = require("./Veterinario.js");
-
 class Animal{
     #nome; 
     #especie;
@@ -10,6 +6,7 @@ class Animal{
     #veterinarios;
 
     constructor(nome, especie, cliente){
+        const Cliente = require("./Cliente.js");
         if(nome != null && nome.length >= 2) this.#nome = nome;
         if(especie != null && especie.length >= 4) this.#especie = especie;
         if(cliente instanceof Cliente) this.#cliente = cliente;
@@ -17,7 +14,7 @@ class Animal{
     }
 
     setNome(nome){
-        if(nome != NULL && nome.length >= 2){
+        if(nome != null && nome.length >= 2){
             this.#nome = nome;
             return true;
         }
@@ -45,7 +42,8 @@ class Animal{
     }
 
     setCliente(cliente){
-        if(cliente instanceof Ciente){
+        const Cliente = require("./Cliente.js");
+        if(cliente instanceof Cliente){
             this.#cliente = cliente;
             return true;
         }
@@ -59,6 +57,7 @@ class Animal{
     }
 
     setProntuario(prontuario){
+        const Prontuario = require("./Prontuario.js");
         if(prontuario instanceof Prontuario){
             this.#prontuario = prontuario;
             return true;
@@ -68,10 +67,16 @@ class Animal{
         }
     }
 
+    getProntuario(){
+        return this.#prontuario;
+    }
     addVeterinario(veterinario){
+        const Veterinario = require("./Veterinario.js");
         if(veterinario instanceof Veterinario){
-            this.#veterinarios.push(veterinario);
-            veterinario.addAnimal(this);            
+            if(!this.#veterinarios.includes(veterinario)){
+                this.#veterinarios.push(veterinario);
+                veterinario.addAnimal(this);
+            }
             return true;
         }
         else{
@@ -84,16 +89,12 @@ class Animal{
     }
 
     listarVeterinarios(){
-        for(vet in this.#veterinarios){
-            console.log(vet.getNome());
+    console.log(`Animal: ${this.#nome}\n`)
+    console.log("Veterinarios:\n")
+        for(const vet of this.#veterinarios){
+            console.log(`\u2022 Nome: ${vet.getNome()}  CRMV: ${vet.getCRMV()}`);
         }
     }
-
-    [util.inspect.custom]() {
-        return `Nome: ${this.#nome}\nEspecie: ${this.#especie}\nDono: ${this.#cliente}\n`;
-    }
-
-
 }
 
 module.exports = Animal;

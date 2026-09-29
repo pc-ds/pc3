@@ -1,15 +1,12 @@
-const Animal = require("./Animal.js");
-const Cliente = require("./Cliente.js");
-const Veterinario = require("./Veterinario.js");
-
 class Prontuario{
     #numero;
     #observacoes;
     #animal;
 
     constructor(numero, animal){
+        const Animal = require("./Animal.js");
         this.#numero = numero;
-        observacoes = [];
+        this.#observacoes = [];
         if(animal instanceof Animal) this.#animal = animal;
     }
 
@@ -22,7 +19,7 @@ class Prontuario{
     }
 
     setObservacoes(observacoes){
-        if(observacoes != null && observacoes >= 15){
+        if(observacoes != null && observacoes.length >= 15){
             this.#observacoes.push(observacoes);
             return true;
         }
@@ -36,6 +33,7 @@ class Prontuario{
     }
 
     setAnimal(animal){
+        const Animal = require("./Animal.js");
         if(animal instanceof Animal){
             this.#animal = animal;
             return true;
@@ -49,3 +47,5 @@ class Prontuario{
         return this.#animal;
     }
 }
+
+module.exports = Prontuario;
