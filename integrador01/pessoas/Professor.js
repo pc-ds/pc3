@@ -23,6 +23,10 @@ class Professor extends Pessoa{
         }
         return false;
     }
+
+    getDisciplina(){
+        return this.#disciplina;
+    }
 }
 
 module.exports = Professor;

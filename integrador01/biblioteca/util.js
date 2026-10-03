@@ -36,6 +36,7 @@ function mostraDados(objeto){
     if(objeto instanceof Professor){
         console.log(`Disciplina: ${objeto.getDisciplina()}`);
     }
+    console.log("====================================================")
 }
 
 module.exports = {validarCPF, validarEmail, validarMatricula, mostraDados};
